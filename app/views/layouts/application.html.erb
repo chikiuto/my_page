@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyPage</title>
+    <title>とーきちのぺーじです</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header>
+  <div class="header-logo">
+    <%= link_to("とーきちのじこしょうかいぺーじ", "/")%>
+  </div>
+  <ul class="header-menus">
+    <li>
+    <%= link_to("ぷろふぃーる", "/profile")%>
+    </li>
+    <li>
+    <%= link_to("ひすとりー", "/history")%>
+    </li>
+    <li>
+    <%= link_to("ひとりごと", "/comment")%>
+    </li>
+  </ul>
+</header>
     <%= yield %>
   </body>
 </html>
