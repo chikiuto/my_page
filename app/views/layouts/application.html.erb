@@ -8,25 +8,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
   </head>
 
   <body>
-  <header>
-  <div class="header-logo">
-    <%= link_to("とーきちのじこしょうかいぺーじ", "/")%>
-  </div>
-  <ul class="header-menus">
-    <li>
-    <%= link_to("ぷろふぃーる", "/profile")%>
-    </li>
-    <li>
-    <%= link_to("ひすとりー", "/history")%>
-    </li>
-    <li>
-    <%= link_to("ひとりごと", "/comment")%>
-    </li>
-  </ul>
-</header>
+  <header class="header-main">
+    <div class="header-title">
+      <%= link_to("とーきちのじこしょうかいぺーじ", "/")%>
+    </div>
+      <ul class="header-menu">
+        <li class="header-menu-content">
+        <%= link_to("ぷろふぃーる", "/profile")%>
+        </li>
+        <li class="header-menu-content">
+        <%= link_to("ひすとりー", "/history")%>
+        </li>
+        <li class="header-menu-content">
+        <%= link_to("ひとりごと", "/comment")%>
+        </li>
+      </ul>
+  </header>
     <%= yield %>
   </body>
 </html>
