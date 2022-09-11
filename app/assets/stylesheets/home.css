@@ -62,41 +62,63 @@ a {
 }
 
 .header-title {
-  padding:1rem 3rem;
+  line-height: 4rem;
   font-size:2rem;
   float:left;
   color: #BBDD00;
 }
 
 .header-menu {
-  padding:1.5rem;
   float: right;
 }
 
 .header-menu-content{
+  line-height: 3rem;
   float:left;
   padding:0 20px;
   color: #BBDD00;
+  margin: 0.5rem 0.5rem;
 }
 
 /* ################ body ################ */
-.profile {
-  height: 90rem;
-  background-image: url("/profile.jpeg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-}
-
 .toppage {
-  height: 50rem;
+  height: 60rem;
   background-image: url("/top.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
 }
 
-.bg {
+.bg-top {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 0 5rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-wrap {
+  height: 30rem;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.content {
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+
+.profile {
+  height: 90rem;
+  background-image: url("/profile.jpeg");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: cover;
+}
+
+.bg-prof {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.75);
   padding: 0 5rem;
@@ -111,26 +133,11 @@ a {
 }
 
 .my_img {
-  height: 17rem;
-  padding: 0.3rem;
+  padding: 0.1rem;
   flex-grow: 1;
   object-fit: cover;
-}
-
-.round {
-  border-radius: 50px;
-}
-
-.content-wrap {
-  height: 30rem;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.content {
-  font-size: 2rem;
-  padding: 2rem 0;
+  height: 20rem;
+  border-radius:20px;
 }
 
 .prof-detail {
@@ -146,15 +153,34 @@ a {
 /* レスポンシブcss */
 /* ########################################## */
 @media screen and (max-width:1014px) {
-  .header-menu {
-    display: none;
+  .header-title {
+    font-size: 1.4rem;
+    line-height: 3rem;
   }
 
   .header-main {
     height: 3rem;
   }
 
-  .header-title {
-    font-size: 1.4rem;
+  .header-menu {
+    float: none;
+    line-height: 3rem;
+    padding: 0;
   }
+
+  .header-menu-content {
+    margin: 0.7rem 0.7rem;
+    line-height: 1.6rem;
+  }
+
+}
+
+@media screen and (max-width:800px) {
+ .header-menu {
+  float: left;
+ }
+
+ .header-main {
+  height: 6rem;
+ }
 }
