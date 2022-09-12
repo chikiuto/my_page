@@ -32,7 +32,8 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
-  background-color: #BBDD00;
+  background-color: #bcdd002c;
+  min-width: 400px;
 }
 ol, ul {
   list-style: none;
@@ -59,6 +60,7 @@ a {
 .header-main {
   background-color:#008000;
   height:4rem;
+  display: flex;
 }
 
 .header-title {
@@ -68,8 +70,11 @@ a {
   color: #BBDD00;
 }
 
+.menu-wrap {
+  background-color: #008000;
+  margin: 0 0 0 auto;
+}
 .header-menu {
-  float: right;
 }
 
 .header-menu-content{
@@ -140,19 +145,38 @@ a {
   border-radius:20px;
 }
 
-.prof-detail {
-  padding: 0 5rem;
-
-}
-
 .prof-content {
   font-size: 1.3rem;
   padding: 2rem 0;
 }
 
+.prof-main {
+  margin: 2rem 5rem;
+  max-width: 100rem;
+  display: flex;
+}
+
+.img-block {
+  width: max-content;
+}
+
+.prof-img {
+  height: 20rem;
+}
+
+.txt-block {
+  width: 70%;
+  padding: 0 2rem;
+  
+}
+
+.in-txt-block {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}
 /* レスポンシブcss */
 /* ########################################## */
-@media screen and (max-width:1014px) {
+@media screen and (max-width:800px) {
   .header-title {
     font-size: 1.4rem;
     line-height: 3rem;
@@ -163,7 +187,6 @@ a {
   }
 
   .header-menu {
-    float: none;
     line-height: 3rem;
     padding: 0;
   }
@@ -173,14 +196,34 @@ a {
     line-height: 1.6rem;
   }
 
+  .prof-main {
+    display: inline;
+   }
+   
+  .img-block {
+    margin: 0 auto;
+  }
+
+  .txt-block {
+    margin: 0 auto;
+  }
 }
 
-@media screen and (max-width:800px) {
- .header-menu {
-  float: left;
- }
+@media screen and (max-width:650px) {
+  .header-title {
+    margin: 0 auto;
+  }
 
- .header-main {
-  height: 6rem;
- }
+  .header-main {
+    height: 6em;
+    display: grid;
+   }
+
+   .menu-wrap {
+    margin: 0 auto;
+   }
+
+   .bg-prof {
+    padding: 0 1rem;
+   }
 }
