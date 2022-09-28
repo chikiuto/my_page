@@ -3,8 +3,6 @@ class HomeController < ApplicationController
   end
   def profile
   end
-  def history
-  end
   def comment
   end
 end
