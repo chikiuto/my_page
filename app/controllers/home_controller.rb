@@ -3,6 +3,4 @@ class HomeController < ApplicationController
   end
   def profile
   end
-  def comment
-  end
 end
