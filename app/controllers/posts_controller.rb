@@ -1,4 +1,13 @@
 class PostsController < ApplicationController
+before_action :ensure_admin, {only: [:edit, :update, :destory]}
+
+  def ensure_admin
+    if !session[:user_id]
+      flash[:notice] = "権限がありません"
+      redirect_to("/comment")
+    end
+  end
+
   def index
     if session[:user_id]
       @posts = Post.all
