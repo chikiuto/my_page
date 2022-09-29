@@ -115,4 +115,5 @@ production:
   <<: *default
   # database: MyPage_production
   # username: MyPage
+  ural: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
