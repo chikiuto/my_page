@@ -12,3 +12,10 @@ Post.create!(
     answer: "tokyo",
     published: 1
 )
+
+User.create!(
+    name:"admindesu",
+    email:"admindesu@admin.com",
+    password:"hoge123",
+    admin:1
+)
