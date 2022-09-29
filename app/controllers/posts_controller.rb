@@ -17,12 +17,11 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
   end
 
   def new
-    @post=Post.new()
+    @post = Post.new
   end
 
   def create
     @post=Post.new(name: params[:name], question: params[:question], published: 0)
-
     if @post.save
       flash[:notice] = "質問を送信しました"
       redirect_to("/comment")

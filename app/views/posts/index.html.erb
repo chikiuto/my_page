@@ -1,12 +1,17 @@
 <% if flash[:notice] %>
-    <div class="flash">
+    <div class="flash" style="background-color: blue;
+                              color:white;">
         <%= flash[:notice] %>
     </div>
 <% end %>
 
 <h1 style="padding:2rem 0;">ひとりごと</h1>
 
-<%= link_to("質問する", "/comment/new") %>
+<div style="background-color: white;
+            width: fit-content;
+            padding: 0.5rem;">
+    <%= link_to("質問する", "/comment/new") %>
+</div>
 
 <% @posts.each do |post| %>
     <div style="padding:1.6rem 0;">

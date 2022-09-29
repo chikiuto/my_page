@@ -1,6 +1,9 @@
 <h1>しつもんしてね</h1>
+<br>
 <% @post.errors.full_messages.each do |message| %>
-    <%= message %>
+    <div class="form-error">
+        <%= message %>
+    </div>
 <% end %>
 
 
@@ -9,5 +12,6 @@
     <input name="name">
     <h1>しつもん</h1>
     <textarea name="question">(最高140字です)</textarea>
+    <br>
     <input type="submit" value="質問する">
 <% end %>
