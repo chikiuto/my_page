@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   get '/' => 'home#top'
   get 'profile' => 'home#profile'
 
