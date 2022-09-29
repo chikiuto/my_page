@@ -1,0 +1,13 @@
+<h1>しつもんしてね</h1>
+<% @post.errors.full_messages.each do |message| %>
+    <%= message %>
+<% end %>
+
+
+<%= form_tag("/comment/create") do %>
+    <h1>なまえ</h1>
+    <input name="name">
+    <h1>しつもん</h1>
+    <textarea name="question">(最高140字です)</textarea>
+    <input type="submit" value="質問する">
+<% end %>

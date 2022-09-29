@@ -1,11 +1,29 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-
-
-<%= @posts.each do |post| %>
-    <div>
-        <%= post.name %>
-        <%= post.question %>
-        
+<% if flash[:notice] %>
+    <div class="flash">
+        <%= flash[:notice] %>
     </div>
 <% end %>
+
+<h1 style="padding:2rem 0;">ひとりごと</h1>
+
+<%= link_to("質問する", "/comment/new") %>
+
+<% @posts.each do |post| %>
+    <div style="padding:1.6rem 0;">
+        <h2>ラジオネーム</h2>
+        <p>「<%= post.name %>」</p>
+        <h2>しつもん</h2>
+        <p>「<%= post.question %>」</p>
+        <h2>かいとう</h2>
+        <p>「<%= post.answer %>」</p>
+        
+        <% if session[:user_id] %>
+            <p>id: <%= post.id %></p>
+            <p>published: <%= post.published %></p>
+
+            <%= link_to("へんしゅう", "/comment/#{post.id}/edit")%>
+            <%= link_to("さくじょ", "/comment/#{post.id}/destroy", data: { turbo_method: :post })%>
+        <% end %>
+    </div>
+<% end %>
+

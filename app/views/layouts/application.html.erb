@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
@@ -18,6 +19,14 @@
     </div>
     <div class="menu-wrap">
       <ul class="header-menu">
+        <% if session[:user_id] %>
+          <li class="header-menu-content">
+          <%= @current_user.name %>
+          </li>
+          <li class="header-menu-content">
+          <%= link_to("ログアウト", "/logout",data: { turbo_method: :post } ) %> 
+          </li>
+        <% end %>
         <li class="header-menu-content">
         <%= link_to("ぷろふぃーる", "/profile")%>
         </li>

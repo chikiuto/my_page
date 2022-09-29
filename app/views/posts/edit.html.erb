@@ -1,0 +1,12 @@
+<h1>へんしゅう</h1>
+
+<%= form_tag("/comment/#{@post.id}/update") do %>
+    <p>なまえ: <%= @post.name%></p>
+    <p>しつもん: <%= @post.question%></p>
+    <h1>かいとう</h1>
+    <textarea name="answer"><%= @post.answer%></textarea>
+    <br>
+    <input name="published" value="<%= @post.published%>" >
+    <input type="submit" value="ほぞんする">
+<% end %>
+
