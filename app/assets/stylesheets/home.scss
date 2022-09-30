@@ -74,10 +74,8 @@ a {
   background-color: #008000;
   margin: 0 0 0 auto;
 }
-.header-menu {
-}
 
-.header-menu-content{
+.header-menu-content {
   line-height: 3rem;
   float:left;
   padding:0 20px;
@@ -107,6 +105,7 @@ a {
   background-color: rgba(255, 255, 255, 0.75);
   max-width: 1010px;
   height: 100%;
+  padding: 0 2rem;
   p {
     font-size: 2rem;
     margin: 5rem 0;
@@ -240,5 +239,16 @@ a {
 
    .bg-prof {
     padding: 0 1rem;
+   }
+
+   .top-txt {
+
+    p {
+    font-size: 1.4rem;
+    }
+
+    span {
+      font-size: 1.5rem;
+    }
    }
 }
