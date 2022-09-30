@@ -251,13 +251,15 @@ a {
   }
 
   .prof-content {
-    padding: 0 0;
+    padding: 0 0 5rem 0;
     ul {
       display: block;
     }
     img {
-      // height: fit-content;
       width: 350px;
+    }
+    p {
+      font-size: 1.3rem;
     }
   }
 }
