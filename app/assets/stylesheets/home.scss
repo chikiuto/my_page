@@ -182,9 +182,6 @@ a {
   }
 }
 
-
-
-
 /* レスポンシブcss */
 /* ########################################## */
 @media screen and (max-width:1000px) {
@@ -254,8 +251,12 @@ a {
   }
 
   .prof-content {
+    padding: 0 0;
+    ul {
+      display: block;
+    }
     img {
-      height: fit-content;
+      // height: fit-content;
       width: 350px;
     }
   }
