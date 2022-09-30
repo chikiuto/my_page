@@ -182,6 +182,24 @@ a {
   }
 }
 
+.comment {
+  text-align: center;
+  h1 {
+    font-size: 2rem;
+    padding: 1rem 0;
+
+  }
+  .makeQ {
+    background-color: white;
+    width: fit-content;
+    padding: 0.5rem;
+    display: inline;
+  }
+  p {
+    padding: 1.2rem;
+  }
+}
+
 /* レスポンシブcss */
 /* ########################################## */
 @media screen and (max-width:1000px) {
