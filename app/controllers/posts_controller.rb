@@ -1,19 +1,19 @@
 class PostsController < ApplicationController
-before_action :ensure_admin, {only: [:edit, :update, :destory]}
+  before_action :ensure_admin, { only: %i[edit update destory] }
 
   def ensure_admin
-    if !session[:user_id]
-      flash[:notice] = "権限がありません"
-      redirect_to("/comment")
+    unless session[:user_id]
+      flash[:notice] = '権限がありません'
+      redirect_to('/comment')
     end
   end
 
   def index
-    if session[:user_id]
-      @posts = Post.all
-    else
-      @posts = Post.where(is_published: true).order(created_at: :desc)
-    end
+    @posts = if session[:user_id]
+               Post.all
+             else
+               Post.where(is_published: true).order(created_at: :desc)
+             end
   end
 
   def new
@@ -21,9 +21,9 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
   end
 
   def create
-    @post=Post.new(name: params[:name], question: params[:question])
+    @post = Post.new(name: params[:name], question: params[:question])
     if @post.save
-      flash[:notice] = "質問を送信しました"
+      flash[:notice] = '質問を送信しました'
       redirect_to comment_path
     else
       render comment_new_path

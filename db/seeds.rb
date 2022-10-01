@@ -7,22 +7,22 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Post.create!(
-    name: "ado",
-    question: "waht is your name?",
-    answer: "tokyo",
-    is_published: 1
+  name: 'ado',
+  question: 'waht is your name?',
+  answer: 'tokyo',
+  is_published: 1
 )
 
 User.create!(
-    name:"admindesu",
-    email:"admindesu@admin.com",
-    password:"hoge123",
-    is_admin: true
+  name: 'admindesu',
+  email: 'admindesu@admin.com',
+  password: 'hoge123',
+  is_admin: true
 )
 
 User.create!(
-    name:"admin_jyanai",
-    email:"admin_jyanai@admin.com",
-    password:"fuga123",
-    is_admin: false
+  name: 'admin_jyanai',
+  email: 'admin_jyanai@admin.com',
+  password: 'fuga123',
+  is_admin: false
 )
