@@ -12,7 +12,7 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
     if session[:user_id]
       @posts = Post.all
     else
-      @posts = Post.where(published: 1).order(created_at: :desc)
+      @posts = Post.where(is_published: true).order(created_at: :desc)
     end
   end
 
@@ -21,12 +21,12 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
   end
 
   def create
-    @post=Post.new(name: params[:name], question: params[:question], published: 0)
+    @post=Post.new(name: params[:name], question: params[:question])
     if @post.save
       flash[:notice] = "質問を送信しました"
-      redirect_to("/comment")
+      redirect_to comment_path
     else
-      render("posts/new")
+      render comment_new_path
     end
   end
 
@@ -36,7 +36,7 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
 
   def update
     @post = Post.find_by(id: params[:id])
-    redirect_to("/comment")
+    redirect_to comment_path
     @post.answer = params[:answer]
     @post.published = params[:published]
     @post.save
@@ -45,6 +45,6 @@ before_action :ensure_admin, {only: [:edit, :update, :destory]}
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    redirect_to("/comment")
+    redirect_to comment_path
   end
 end

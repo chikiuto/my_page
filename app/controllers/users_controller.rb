@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     end
 
     def login
-        @user = User.find_by(email: params[:email],
-                            password: params[:password])
-        if @user
+        @user = User.find_by(email: login_params[:email])
+                           
+        if @user.authenticate(login_params[:password])
             session[:user_id] = @user.id
             session[:admin_name] = @user.name
             flash[:notice] = "ログインしました"
@@ -20,5 +20,11 @@ class UsersController < ApplicationController
         session[:user_id] = nil
         flash[:notice] = "ログアウトしました"
         redirect_to("/comment")
+    end
+
+    private
+
+    def login_params
+        params.require(:session).permit(:email, :password)
     end
 end
