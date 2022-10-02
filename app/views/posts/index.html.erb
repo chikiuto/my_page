@@ -19,7 +19,6 @@
     <div class="makeQ">
         <%= link_to("質問する", "/comment/new") %>
     </div>
-<<<<<<< HEAD
     <div style="">
         <% @posts.each do |post| %>
             <div style="padding:1.6rem 0;">
@@ -40,26 +39,5 @@
             </div>
         <% end %>
     </div>
-=======
-
-    <% @posts.each do |post| %>
-        <div style="padding:1.6rem 0;">
-        - - - - - - - - - - - - - - -
-            <h2>ラジオネーム</h2>
-            <p>「<%= post.name %>」</p>
-            <h2>しつもん</h2>
-            <p>「<%= post.question %>」</p>
-            <h2>かいとう</h2>
-            <p>「<%= post.answer %>」</p>
-            <% if session[:user_id] %>
-                <p>id: <%= post.id %></p>
-                <p>published: <%= post.is_published %></p>
-                <%= link_to("へんしゅう", "/comment/#{post.id}/edit")%>
-                <%= link_to("さくじょ", "/comment/#{post.id}/destroy", data: { turbo_method: :post })%>
-            <% end %>
-        - - - - - - - - - - - - - - - -
-        </div>
-    <% end %>
->>>>>>> refs/remotes/origin/main
 </div>
 
