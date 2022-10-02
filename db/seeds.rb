@@ -17,5 +17,12 @@ User.create!(
     name:"admindesu",
     email:"admindesu@admin.com",
     password:"hoge123",
-    admin:1
+    is_admin: true
+)
+
+User.create!(
+    name:"admindesu",
+    email:"admindesu@admin.com",
+    password:"hoge123",
+    is_admin: false
 )
