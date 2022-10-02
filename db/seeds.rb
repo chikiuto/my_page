@@ -14,7 +14,6 @@ Post.create!(
 )
 
 User.create!(
-<<<<<<< HEAD
     name:"admindesu",
     email:"admindesu@admin.com",
     password:"hoge123",
@@ -27,17 +26,3 @@ User.create!(
     password:"hoge123",
     is_admin: false
 )
-=======
-  name: 'admindesu',
-  email: 'admindesu@admin.com',
-  password: 'hoge123',
-  is_admin: true
-)
-
-User.create!(
-  name: 'admin_jyanai',
-  email: 'admin_jyanai@admin.com',
-  password: 'fuga123',
-  is_admin: false
-)
->>>>>>> refs/remotes/origin/main
